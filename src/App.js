@@ -5,20 +5,20 @@ import {DadosProvider} from "./contexts/context";
 import Login from "./screens/Login"
 import Dashboard from "./screens/Dashboard";
 import CadastroFuncionario from "./screens/CadastroFuncionario";
+import CadastroMaterial from "./screens/CadastroMaterial";
 
 function App() {
   return (
-    <div className="App">
       <DadosProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<Login />} path="/login"/>
-              <Route element={<Dashboard />} path="/dashboard"/>
-              <Route element={<CadastroFuncionario />} path="/"/>
+            <Route element={<Login />} path="/"/>
+            <Route element={<Dashboard />} path="/dashboard"/>
+            <Route element={<CadastroFuncionario />} path="/funcionario"/>
+            <Route element={<CadastroMaterial/>} path="/material"/>
           </Routes>
         </BrowserRouter>
       </DadosProvider>
-    </div>
   );
 }
 

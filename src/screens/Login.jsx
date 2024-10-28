@@ -13,18 +13,15 @@ function Login(){
         e.preventDefault()
         console.log('NIF:', nif);
         console.log('Senha:', senha);
-        let resp = await fetchData("/login", "POST", {"NIF": nif, "senha": senha})
+        let resp = await fetchData("/login", "POST", {"nif": nif, "senha": senha})
         setNIF('');
         setSenha('');
         console.log(resp)
 
-        if (!("response" in resp)){
             alert(resp.mensagem)
-            return
-        }
 
-        if(resp.mensagem == "Login com sucesso"){
-            navigate('/')
+        if(resp.mensagem === 'Login bem-sucedido! Redirecionando para a tela de designação.'){
+            navigate('/problema')
         }
     };
 

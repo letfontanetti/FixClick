@@ -40,7 +40,7 @@ function DadosProvider({ children }) {
             config.headers.Authorization = "Bearer " + auth
         }
 
-        let rota = "http://192.168.1.122:5000"+url
+        let rota = "http://192.168.1.140:5000"+url
         return await fetch(rota, config)
             .then(response => response.json())
     }
